@@ -1,25 +1,35 @@
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
+import Nav from './components/Nav'
+import Header from './components/header/Header'
+import { styled } from '@mui/material/styles'
+import { 
+  Container,
+  Box, 
+  Grid, 
+  Paper,
+  Avatar } from '@mui/material'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const Item = styled(Paper)(({ theme }) => ({
+  ...theme.typography.body2,
+  padding: theme.spacing(0),
+  borderRadius: 0,
+  textAlign: 'center',
+  color: theme.palette.text.secondary,
+}));
+
+class App extends Component {
+  render () {
+    return (
+      <Container 
+        maxWidth='xxl'
+        sx={{ 
+          bgcolor: 'darkcyan',
+          textAlign: 'center' }}>
+        <Header/>
+      </Container>
+    );
+  }
 }
 
 export default App;
