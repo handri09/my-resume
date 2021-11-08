@@ -9,6 +9,7 @@ import {
   Grid, 
   Paper,
   Avatar } from '@mui/material'
+import Bar from './components/header/Bar'
 
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
@@ -24,9 +25,13 @@ class App extends Component {
       <Container 
         maxWidth='xxl'
         sx={{ 
-          bgcolor: 'darkcyan',
+          bgcolor: 'secondary.dark',
           textAlign: 'center' }}>
+        
+        <Bar />
+        
         <Header/>
+
       </Container>
     );
   }

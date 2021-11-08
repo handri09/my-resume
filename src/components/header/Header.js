@@ -4,8 +4,29 @@ import {
   Box, 
   Grid, 
   Paper,
-  Avatar,} from '@mui/material'
+  Avatar,
+  Typography
+} from '@mui/material'
 import Head from './Head'
+
+
+
+import {
+  createTheme,
+  responsiveFontSizes,
+  ThemeProvider,
+} from '@mui/material/styles';
+
+let theme = createTheme({
+	typography: {
+		h2: {
+			color: 'white',
+		}
+	}
+});
+
+theme = responsiveFontSizes(theme);
+
 
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -18,28 +39,11 @@ const Item = styled(Paper)(({ theme }) => ({
 
 export default function Header() {
 	return (
-		<div className='header'>
-        <Grid container spacing={2} >
-        	<Head />
-
-
-          <Grid item xs={6} sx={{ borderRadius : 0 }} marginTop={2}>
-            <Item>
-              <Box 
-                sx={{
-                  width: '100%',
-                  height: '100%',
-                  backgroundColor: 'darkcyan',
-                  padding:0
-                }}>
-              <p>Hello</p>
-              </Box>
-            </Item>
-          </Grid>
-        </Grid>
-
-			<Citation />
-		</div>
+    <Grid container spacing={1} >
+    	<Body />
+    	<Foot />
+    	<Headi />
+    </Grid>
 	);
 }
 
@@ -54,13 +58,81 @@ const Citation = () => {
 const Body = () => {
 	return (
 		<Grid item xs={12} sx={{ borderRadius : 0 }} marginTop={1}>
+      <Box 
+        sx={{
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'white',
+          padding:0
+        }}>
+
+      <h1>CONTENT</h1>
+      
+      </Box>
 		</Grid>
 	);
 }
 
 const Foot = () => {
 	return (
-		<Grid item xs={12} sx={{ borderRadius : 0,  }} marginTop={1}>
-		</Grid>
+    <Grid item xs={12} sx={{ borderRadius : 0 }} marginTop={1}>
+    	<Grid container spacing={1} >
+    		<Grid item xs={4} sx={{ borderRadius : 0, backgroundColor: 'primary.dark' }} marginTop={1}>
+	  			<Avatar
+						alt="Haja Niaina"
+						src='./test.png'
+						sx={{ width: '100%', height:'100%' }}
+						variant="square" //rounded
+						/>
+    		</Grid>
+    		
+    		<Grid item xs={8} sx={{ borderRadius : 0, backgroundColor: 'primary.dark' }} marginTop={1}>				
+					<ThemeProvider theme={theme}>
+						<Typography variant="h2">
+	        		Hajaniaina ANDRIANAVALONA
+	      		</Typography>
+						<Typography variant="h3">
+	        		OSISOFT PI Administrator
+	      		</Typography>
+						<p>Address: TOAMASINA, MADAGASCAR</p>
+						<p>Open to position: </p>
+						<p>Full Stack Web Developer (Flask-React)</p>
+						<p>React Developer</p>
+						<p>AI Developer (python-pytorch)</p>
+						<div>Data Scientist (postgreSQL-python)</div>
+					</ThemeProvider>
+
+    		</Grid>
+	    </Grid>
+    </Grid>
+	);
+}
+
+const Headi = () => {
+	return (
+    <Grid item xs={12} sx={{ borderRadius : 0 }} marginTop={1}>
+      <Box 
+        sx={{
+          width: '100%',
+          height: '100%',
+          backgroundColor: 'primary.dark',
+          padding:0
+        }}>
+     	<Citation />
+      </Box>
+
+      <Grid item xs={12} sx={{ borderRadius : 0, backgroundColor: 'primary/dark' }} marginTop={0}>
+        <Box sx={{ width: '100%', height: '100%', backgroundColor: 'darkcyan', padding:0 }}>
+					<Avatar
+						alt="Haja Niaina"
+						src='./bgv3.jpg'
+  					sx={{ width: '100%', height:'100%' }}
+  					variant="square" //rounded
+						/>
+        </Box>
+        <h1>TEST BE</h1>
+      </Grid>
+
+    </Grid>
 	);
 }
