@@ -25,9 +25,9 @@ class App extends Component {
       <Container 
         maxWidth='xxl'
         sx={{ 
-          bgcolor: 'secondary.dark',
+          bgcolor: 'success.dark',
           textAlign: 'center' }}>
-        
+          
         <Bar />
         
         <Header/>
