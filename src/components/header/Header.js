@@ -27,8 +27,6 @@ let theme = createTheme({
 
 theme = responsiveFontSizes(theme);
 
-
-
 const Item = styled(Paper)(({ theme }) => ({
   ...theme.typography.body2,
   padding: theme.spacing(0),
@@ -40,9 +38,7 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function Header() {
 	return (
     <Grid container spacing={1} >
-    	<Body />
-    	<Foot />
-    	<Headi />
+    
     </Grid>
 	);
 }
@@ -75,9 +71,9 @@ const Body = () => {
 
 const Foot = () => {
 	return (
-    <Grid item xs={12} sx={{ borderRadius : 0 }} marginTop={1}>
+    <Grid item xs={12} sx={{ borderRadius : 0, backgroundColor: '#0072e6' }} marginTop={1}>
     	<Grid container spacing={1} >
-    		<Grid item xs={4} sx={{ borderRadius : 0, backgroundColor: 'primary.dark' }} marginTop={1}>
+    		<Grid item xs={4} sx={{ borderRadius : 0, backgroundColor: 'error.dark' }} marginTop={1}>
 	  			<Avatar
 						alt="Haja Niaina"
 						src='./test.png'
@@ -86,7 +82,7 @@ const Foot = () => {
 						/>
     		</Grid>
     		
-    		<Grid item xs={8} sx={{ borderRadius : 0, backgroundColor: 'primary.dark' }} marginTop={1}>				
+    		<Grid item xs={8} sx={{ borderRadius : 0, backgroundColor: '#0072e6' }} marginTop={1}>				
 					<ThemeProvider theme={theme}>
 						<Typography variant="h2">
 	        		Hajaniaina ANDRIANAVALONA
@@ -115,14 +111,14 @@ const Headi = () => {
         sx={{
           width: '100%',
           height: '100%',
-          backgroundColor: 'primary.dark',
+          backgroundColor: '#0072e6',
           padding:0
         }}>
      	<Citation />
       </Box>
 
-      <Grid item xs={12} sx={{ borderRadius : 0, backgroundColor: 'primary/dark' }} marginTop={0}>
-        <Box sx={{ width: '100%', height: '100%', backgroundColor: 'darkcyan', padding:0 }}>
+      <Grid item xs={12} sx={{ borderRadius : 0, backgroundColor: 'secondary.dark' }} marginTop={0}>
+        <Box sx={{ width: '100%', height: '100%', backgroundColor: '#0072e6', padding:0 }}>
 					<Avatar
 						alt="Haja Niaina"
 						src='./bgv3.jpg'
